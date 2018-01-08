@@ -1,3 +1,11 @@
+%% Created by Noah Rohrlich
+%% June 2017
+%% Designed to accompany Digital Signals Processing lab for instruction
+%%  of ECE3430 at University of Virginia, led by Prof. Todd DeLong.
+%% This program plots the theoretical frequency magnitude response for
+%%  a 64-sample averaging filter and notch filter at Fs = 3840Hz. Also plots the 
+%%  experimentally-collected data points (if any were entered in the vectors).
+
 %% Define ranges and variables of importance
 clear;clc;
 figure_num = 1;
@@ -20,7 +28,7 @@ Fs = 3840;
 % Define complex variable z
 % Note: z = exp(j * 2*pi*f / Fs), a complex variable used often in DSP
 z = cos(2*pi*f./Fs)+1j*sin(2*pi*f./Fs);
-b = zeros(length(f), 1)';    %Initialize numerator of transfer function
+b = ones(length(f), 1)';    %Initialize numerator of transfer function
 
 %% Calculate theoretical response
 
